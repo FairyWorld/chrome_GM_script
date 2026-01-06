@@ -424,7 +424,7 @@
         'violet': '#ee82ee',
         'wheat': '#f5deb3',
         'white': '#ffffff',
-        'whitesmoke': '#f5f5f5',
+        'whitesmoke': '#fAfAfA',
         'yellow': '#ffff00',
         'yellowgreen': '#9acd32'
     };

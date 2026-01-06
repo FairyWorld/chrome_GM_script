@@ -4,20 +4,21 @@ iframe:not([src*='chrome']),
 #page .fk,
 #head .headBlock,
 #rs_top_new,
-#wrapper #content_left > table,
+#wrapper #content_left>table,
 #wrapper #content_left .c-recommend,
 #wrapper #content_left .leftBlock,
 #wrapper #content_left .rrecom-btn-parent,
 #demo,
 #wrapper #gotoPage,
-body > div.result-op,
+body>div.result-op,
 .rrecom-container,
+.selected-search-box,
 .chunwan-wrapper {
   display: none !important;
 }
 
 body[baidu] {
-  background-color: #f5f5f5;
+  background-color: #fAfAfA;
   /*transition: all ease-out 0.8s;*/
 }
 
@@ -28,7 +29,7 @@ body[baidu] {
 body a,
 body a em,
 #u a,
-#wrapper #content_left .result h3 a em{
+#wrapper #content_left .result h3 a em {
   text-decoration: none;
 }
 
@@ -86,7 +87,8 @@ form.fm {
 
 /***fix 2k+ problem***/
 #head .head_wrapper {
-  width: unset; /*edit: fix baidu banner position*/
+  width: unset;
+  /*edit: fix baidu banner position*/
 }
 
 #wrapper #s_tab b {
@@ -100,32 +102,32 @@ form.fm {
 }
 
 #wrapper #content_left {
-  animation-name: ani_topTobuttom;
-  animation-duration: .1s;
-  animation-timing-function: ease;
+  animation: ani_topTobuttom 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 #head .head_wrapper {
-  animation-name: ani_leftToright;
-  animation-duration: 0.2s;
-  animation-timing-function: ease-in;
+  animation: ani_leftToright 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 #wrapper #rs,
 #wrapper #content_left .result,
 #wrapper #content_left .result-op,
-#wrapper #content_left > .c-container {
+#wrapper #content_left>.c-container {
   width: 670px;
   padding: 0 8px 15px 20px;
   margin-top: 0;
   margin-left: 0;
   margin-bottom: 30px;
-  border-radius: 0;
+  border-radius: 8px;
   background-color: #fff;
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  
-  div[class*='single-card-wrapper'] {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  /* 初始不可见，由 JS 或通用类触发展示 */
+  &.ac-entry-ani {
+    animation: ani_topTobuttom 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
   div[class*='_aladdin'] {
@@ -133,29 +135,31 @@ form.fm {
   }
 }
 
-#wrapper #content_left > .c-container:hover,
-#wrapper #content_left > .result:hover,
-#wrapper #content_left > .result-op:hover,
-#wrapper #content_left > .c-container:hover article {
-  border: 1px solid rgba(0, 0, 0, .3);
-  box-shadow: 0 0 1px grey;
+#wrapper #content_left>.c-container:hover,
+#wrapper #content_left>.result:hover,
+#wrapper #content_left>.result-op:hover,
+#wrapper #content_left>.c-container:hover article {
+  border: 1px solid rgba(0, 0, 0, .1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
 }
 
 #wrapper #rs[ac-needhide],
-#wrapper #content_left > .result[ac-needhide],
-#wrapper #content_left > .result-op[ac-needhide],
-#wrapper #content_left > .c-container[ac-needhide] {
+#wrapper #content_left>.result[ac-needhide],
+#wrapper #content_left>.result-op[ac-needhide],
+#wrapper #content_left>.c-container[ac-needhide] {
   padding: 5px;
   padding-left: 15px;
 }
 
-#wrapper #content_left > .result[tpl='soft'] .op-soft-title,
-#wrapper #content_left > .result h3[class*='title'],
-#wrapper #content_left > .c-container h3[class*='title'] {
+#wrapper #content_left>.result[tpl='soft'] .op-soft-title,
+#wrapper #content_left>.result h3[class*='title'],
+#wrapper #content_left>.c-container h3[class*='title'] {
   background-color: #f8f8f8;
   margin: 0px -8px 10px -20px;
   padding: 8px 20px 5px;
-  border-radius: 5px 5px 0 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .title-box_4YBsj {
@@ -178,7 +182,7 @@ form.fm {
   .op_dq01_morelink a,
   .op-tieba-general-mainpl a,
   .op-se-listen-recommend,
-  .c-offset > div a {
+  .c-offset>div a {
     text-decoration: none;
     color: #3476d2;
 
@@ -217,10 +221,11 @@ form.fm {
 }
 
 #wrapper #content_left {
+
   .op-soft-title,
   .result,
   .result-op,
-  & > .c-container {
+  &>.c-container {
 
     h3[class*='t'] {
       font-weight: bold;
@@ -241,7 +246,8 @@ form.fm {
       }
     }
 
-    a, a:visited {
+    a,
+    a:visited {
       &:after {
         content: "";
         position: absolute;
@@ -259,10 +265,6 @@ form.fm {
       }
     }
   }
-  
-  .xpath-log{
-    
-  }
 }
 
 #wrapper #content_left {
@@ -271,7 +273,7 @@ form.fm {
     margin: 0 0 20px 0;
     min-width: 610px;
 
-    &> .c-container {
+    &>.c-container {
       min-width: unset;
     }
 
@@ -366,8 +368,8 @@ form.fm {
 #container.sam_newgrid .c-container .t:not([class*='doc-title']) {
   margin-top: 18px;
 
-  .AC-faviconT ~ a,
-  .c-icon ~ a{
+  .AC-faviconT~a,
+  .c-icon~a {
     display: inline
   }
 }
@@ -376,12 +378,13 @@ body #wrapper #content_left a[href*='official'] {
   color: white;
 }
 
-#content_left .cu-border{
+#content_left .cu-border {
   box-shadow: unset;
-  -webkit-box-shadow: unset;  
+  -webkit-box-shadow: unset;
 }
 
-#content_left .c-group-middle, #content_left .c-group-top {
+#content_left .c-group-middle,
+#content_left .c-group-top {
   margin-bottom: 30px !important;
 }
 
@@ -394,11 +397,9 @@ body #wrapper #content_left a[href*='official'] {
   position: unset; // 避免重叠在一起
 }
 
-.c-container .c-result-content {
-  //padding-top: 20px;
-}
+.c-container .c-result-content {}
 
-#wrapper #content_left > .c-container article {
+#wrapper #content_left>.c-container article {
   padding-top: 15px;
   border: unset !important;
   box-shadow: unset !important;
@@ -420,13 +421,13 @@ body .wrapper_new #head.fix-head .s_form {
   opacity: 0;
 }
 
-.ec-tuiguang{
+.ec-tuiguang {
   background-color: red;
-  color: white;  
+  color: white;
 }
 
 body.showRight {
-  
+
   // 只能采用这种方案来对其进行隐藏，否则会导致百度页面加载非常缓慢
   #wrapper #content_right {
     width: 400px; // use this value as default
@@ -435,18 +436,19 @@ body.showRight {
     opacity: 1;
   }
 }
+
 .result-molecule {
-  #searchTag{
+  #searchTag {
     background: unset;
 
-    &.tag-fixed{
+    &.tag-fixed {
       left: 0;
     }
-    
+
     &:not(.tag-fixed) {
       overflow: hidden;
-      
-      div[class*='tag-wrapper']{
+
+      div[class*='tag-wrapper'] {
         margin-left: unset;
 
         div[class*='tag-scroll'] {
@@ -455,21 +457,22 @@ body.showRight {
       }
     }
   }
-  
-  #page > div {
+
+  #page>div {
     width: unset;
   }
 }
 
-#wrapper #content_left > .c-container {
-  
-  &[tpl='recommend_list']{
+#wrapper #content_left>.c-container {
+
+  &[tpl='recommend_list'] {
     padding-top: 10px;
     display: flex;
     align-items: center;
   }
+
   &[tpl='wenda_generate'],
-  &[tpl='ai_index']{
+  &[tpl='ai_index'] {
     height: 400px;
     overflow-y: auto;
     overflow-x: clip;
@@ -482,38 +485,41 @@ body.showRight {
 }
 
 @media screen and (max-width: 1280px) {
-  #u .toindex, #u #imsg {
+
+  #u .toindex,
+  #u #imsg {
     display: none;
   }
 }
 
-.wrapper_new #s_tab.s_tab .s_tab_inner{
+.wrapper_new #s_tab.s_tab .s_tab_inner {
   align-items: center;
 
-  & > *:after {
+  &>*:after {
     display: none; // 下划线 none掉
   }
 }
 
 @media screen and (min-width: 1921px) {
+
   /*Baidu in 2K screen default in : center*/
   #head .head_wrapper {
     transform: translateX(-100px);
     justify-content: center;
     display: flex;
   }
-  
+
   body[baidu] {
-    .wrapper_new #s_tab.s_tab .s_tab_inner{
+    .wrapper_new #s_tab.s_tab .s_tab_inner {
       align-items: center;
       padding-left: 200px;
-      
-      & > *:after {
+
+      &>*:after {
         display: none; // 下划线 none掉
       }
     }
-    
-    #container.sam_newgrid{
+
+    #container.sam_newgrid {
       padding-left: 316px;
     }
 
@@ -534,7 +540,11 @@ body.showRight {
 
   /* 标准密度设备 */
   @media screen and (resolution: 1dppx) {
-    #wrapper #rs, #wrapper #content_left .result, #wrapper #content_left .result-op, #wrapper #content_left > .c-container {
+
+    #wrapper #rs,
+    #wrapper #content_left .result,
+    #wrapper #content_left .result-op,
+    #wrapper #content_left>.c-container {
       min-width: 888px;
       margin-left: calc(var(--wrapper-padding)* -1.3);
     }
@@ -546,8 +556,11 @@ body.showRight {
 }
 
 @media screen and (min-width: 1921px) and (min-resolution: 1.2dppx) and (max-resolution: 2dppx) {
-  #wrapper #rs, #wrapper #content_left .result, #wrapper #content_left .result-op, #wrapper #content_left > .c-container {
-    min-width: 888px;
+
+  #wrapper #rs,
+  #wrapper #content_left .result,
+  #wrapper #content_left .result-op,
+  #wrapper #content_left>.c-container {
     margin-left: calc(var(--wrapper-padding)* -1.3);
   }
 }

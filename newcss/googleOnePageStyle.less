@@ -2,7 +2,6 @@
 div[two-father] {
   position: relative;
   float: unset;
-  width: 1000px;
   margin: 0 auto;
   align-items: stretch;
   justify-items: stretch;
@@ -14,8 +13,9 @@ div[two-father] {
   margin-left: 20px;
 }
 
-div[two-child] {
+div[two-child], .A6K0A {
   width: 100% !important;
+  margin-left: calc(33.44vw - 491.69px); /** 1366=-40px；1920=160px；2560=360px **/
   height: 100%;
   overflow: hidden;
   padding: 0px 20px 15px;
@@ -96,7 +96,6 @@ g-section-with-header {
 }
 
 #main #cnt, #cnt #center_col, #cnt #foot {
-  grid-column: 6/span 12;
   width: calc(36.10vw + 306.86px);
   transition: all 1.2s ease-in-out;
   animation-name: ani_hideToShow;
@@ -132,6 +131,16 @@ body[google] .rZj61{
   }
 }
 
+@media (min-width: 800px) {
+  #main #cnt, #cnt #center_col, #cnt #foot {
+  }
+}
+
+@media (min-width: 1440px) {
+  #main #cnt, #cnt #center_col, #cnt #foot {
+  }
+}
+
 @media screen and (min-width: 1675px) {
   .srp {
     --center-abs-margin: 22vw;
@@ -139,5 +148,7 @@ body[google] .rZj61{
 
   .YNk70c .sBbkle {
     margin-left: 35%;
+  }
+  #main #cnt, #cnt #center_col, #cnt #foot {
   }
 }

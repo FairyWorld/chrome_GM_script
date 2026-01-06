@@ -43,13 +43,19 @@ body[baidu] .pagefoot.gj {
 #wrapper #page {
   position: relative;
   padding-left: 0px;
-  width: 40% !important;
+  width: 45% !important;
+  max-width: 900px;
   min-width: 670px;
   float: unset;
   margin-left: unset;
   margin: 0 auto;
+
   @media only screen and (min-resolution: 1.25dppx) {
-    width: 45% !important;
+    width: 50% !important;
+  }
+
+  @media screen and (max-width: 1280px) {
+    width: 80% !important;
   }
 }
 
@@ -69,12 +75,13 @@ body[baidu] .pagefoot.gj {
 #wrapper #content_left .result,
 #wrapper #content_left .result-op,
 #wrapper #content_left div[class*='vmp-project'],
-#wrapper #content_left > .c-container {
+#wrapper #content_left>.c-container {
   width: 100% !important;
   min-width: 650px;
 }
 
 @media screen and (min-width: 1000px) {
+
   #wrapper #content_left,
   #wrapper #rs {
     min-width: 800px;
@@ -92,11 +99,11 @@ body[baidu] .pagefoot.gj {
 }
 
 body.showRight #wrapper #container.sam_newgrid #content_left {
-  transform: translateX(calc(6vw - 251px));
+  transform: translateX(calc(10vw - 320px));
 }
 
 body.showRight #wrapper #content_right {
-  right: calc(37.5vw - 470px);
+  right: calc(40vw - 500px);
 }
 
 @media screen and (max-width: 1280px) {
@@ -198,7 +205,7 @@ form.fm .s_ipt_wr.bg {
   padding: 10px 0 10px 20px;
 }
 
-.result-molecule #page > div {
+.result-molecule #page>div {
   width: unset;
   padding-left: unset;
 }
@@ -208,14 +215,15 @@ form.fm .s_ipt_wr.bg {
   margin-top: 12px;
 }
 
-.wrapper_new .s_form.s_form_fresh{
+.wrapper_new .s_form.s_form_fresh {
   margin: 0 auto;
 }
-.smart_input_wrapper #main-wrapper{
+
+.smart_input_wrapper #main-wrapper {
   width: unset;
 }
 
-.s_form > .s_form_wrapper{
+.s_form>.s_form_wrapper {
   margin-left: calc(-31.25vw + 840.00px);
 }
 
@@ -224,10 +232,10 @@ body[baidu] #chat-input-main {
 }
 
 .showRight {
-  .s_form > .s_form_wrapper{
+  .s_form>.s_form_wrapper {
     margin-left: unset;
   }
-  
+
   #chat-input-main {
     width: calc(12.65vw + 501.87px);
   }
@@ -251,7 +259,7 @@ body[baidu] #chat-input-main {
         justify-content: space-evenly;
         padding-left: 0;
 
-        > * {
+        >* {
           margin-right: 0;
           text-align: center;
         }
@@ -270,16 +278,18 @@ body[baidu] #chat-input-main {
   #wrapper #rs,
   #wrapper #content_left .result,
   #wrapper #content_left .result-op,
-  #wrapper #content_left > .c-container{
-    margin-left: 20px;
+  #wrapper #content_left>.c-container {
+    margin-left: auto;
+    margin-right: auto;
   }
-  
+
   .showRight {
-    #wrapper #rs, 
+
+    #wrapper #rs,
     #wrapper #content_left .result,
     #wrapper #content_left .result-op,
-    #wrapper #content_left > .c-container{
-      margin-left: calc(12.50vw - 220px);
+    #wrapper #content_left>.c-container {
+      margin-left: calc(15vw - 250px);
     }
   }
 }
@@ -289,8 +299,10 @@ body[baidu] #chat-input-main {
     padding-left: 0px !important;
   }
 
-  .s_form > .s_form_wrapper {
-    margin-left: calc(-45.13vw + 916.43px); /** 1366=300px；1920=50px **/ ;
+  .s_form>.s_form_wrapper {
+    margin-left: calc(-45.13vw + 916.43px);
+    /** 1366=300px；1920=50px **/
+    ;
   }
 }
 
@@ -318,7 +330,7 @@ body[baidu] #chat-input-main {
         justify-content: space-evenly;
         padding-left: 0;
 
-        > * {
+        >* {
           margin-right: 0;
           text-align: center;
         }

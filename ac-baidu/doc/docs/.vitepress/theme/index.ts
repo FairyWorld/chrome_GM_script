@@ -66,7 +66,7 @@ export default {
               if(existInsert) return;
 
               node.insertAdjacentHTML('beforeend', `
-<div class="bottom-href" style="width: 76%; margin-top: -42px;">
+<div class="bottom-href" style="width: 90%; margin-top: -42px;">
     <div style="display: flex;justify-content: space-around; margin-bottom: 20px;">
         <div style="font-weight: bold; color: chocolate;">
             友情链接：

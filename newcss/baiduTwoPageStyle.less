@@ -58,14 +58,15 @@ form.fm {
 
 #wrapper #content_left {
   display: grid;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: repeat(2, 48%);
+  grid-gap: 0 20px;
   grid-template-areas: "xmain xmain";
   margin: 0 auto;
   position: relative;
-  padding-left: 5%;
+  padding-left: 2%;
   float: unset;
-  width: 80%;
-  margin-left: 7%;
+  width: 90%;
+  max-width: 1400px;
   margin-bottom: 30px;
 }
 
@@ -106,21 +107,28 @@ body[news] #wrapper #content_left > div:not([class]):not([id]) {
   .result-op,
   div[class*='vmp-project'],
   & > .c-container {
-    width: unset !important;
-    max-width: 100%;
+    width: 100% !important;
+    max-width: unset;
     margin-left: 0;
-    margin-right: 15px;
+    margin-right: 0;
   }
 
   > *:not([class*='result']):not([class*='c-group-wrapper']) {
-    grid-column-start: 1;
-    grid-column-end: xmain-end;
+    grid-column: 1 / span 2;
   }
 }
 
-.c-container h3 a {
-  z-index: 1;
+.c-container h3 {
+  ~span{
+    margin-bottom: 10px !important;
+    padding-top: 10px;
+    background-color: #f8f8f8;
+  }
+  a {
+    z-index: 1;
+  }
 }
+
 
 .AC.sp-separator {
   width: auto;
@@ -213,13 +221,16 @@ body[news] #wrapper #content_left > div:not([class]):not([id]) {
   }
 
   body[baidu] {
-
     #container.sam_newgrid {
       padding-left: 158px;
     }
 
+    #wrapper #content_left {
+      width: 95%;
+      max-width: 1600px;
+    }
+
     #wrapper #s_tab.s_tab {
-      
       .s_tab_inner {
         width: 850px;
         padding-left: 100px;

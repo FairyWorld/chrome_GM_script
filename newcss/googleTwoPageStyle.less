@@ -50,55 +50,57 @@ div[two-child] {
 
 #main #cnt, #cnt #center_col, #cnt #foot, .HdCKGe {
   width: calc(54vw + 360px);
+  margin: 0 auto;
+  grid-column: unset;
 }
 
 body #appbar, body .rhscol, body #top_nav, body #fbar {
-  min-width: unset;
+min-width: unset;
 }
 
 #rso .COEoid,
 #kp-wp-tab-overview > div {
-  margin: unset;
+margin: unset;
 }
 
 .col {
-  width: 100% !important;
+width: 100% !important;
 }
 
 .col #center_col {
-  width: 100% !important;
-  margin-left: unset !important;
+width: 100% !important;
+margin-left: unset !important;
 }
 
 div[two-father], #kp-wp-tab-overview {
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  grid-template-areas: "xmain xmain";
-  grid-gap: 20px !important;
-  margin-bottom: 20px;
-  justify-items: stretch;
-  align-items: stretch;
-  width: 100%;
+display: grid;
+grid-template-columns: repeat(2, 50%);
+grid-template-areas: "xmain xmain";
+grid-gap: 20px !important;
+margin-bottom: 20px;
+justify-items: stretch;
+align-items: stretch;
+width: 100%;
 
-  div[two-father]{
-    min-width: unset;
-    display: unset;
+div[two-father]{
+min-width: unset;
+display: unset;
 
-    div[two-child] {
-      height: unset;
-    }
-  }
+div[two-child] {
+  height: unset;
+}
+}
 }
 
 #rso > div[two-child] ~ div:not(div[two-child]),
 #rcnt #botstuff > div[two-child] ~ div:not(div[two-child]) {
-  margin-bottom: 10px;
+margin-bottom: 10px;
 }
 
 .AC.sp-separator {
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
+margin-top: 10px;
+margin-left: auto;
+margin-right: auto;
 }
 
 /**search box align center**/
